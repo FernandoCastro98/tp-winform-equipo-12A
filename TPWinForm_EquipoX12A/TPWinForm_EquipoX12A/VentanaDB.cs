@@ -74,8 +74,14 @@ namespace TPWinForm_EquipoX12A
 
             }
 
+        }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvArticulos.DataSource = new List<Articulo>();
+            BusquedaArticulo ventanaBusqueda = new BusquedaArticulo();
+            ventanaBusqueda.ShowDialog();
         }
     }
 }

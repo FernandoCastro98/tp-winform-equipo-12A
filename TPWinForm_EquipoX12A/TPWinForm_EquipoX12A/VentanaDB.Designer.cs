@@ -34,6 +34,9 @@
             this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pnlFondo = new System.Windows.Forms.Panel();
+            this.btnUrlCheck = new System.Windows.Forms.Button();
+            this.txbUrlImagen = new System.Windows.Forms.TextBox();
+            this.lblUrl = new System.Windows.Forms.Label();
             this.pbxUrlImagen = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -47,9 +50,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txbIngresarCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblUrl = new System.Windows.Forms.Label();
-            this.txbUrlImagen = new System.Windows.Forms.TextBox();
-            this.btnUrlCheck = new System.Windows.Forms.Button();
+            this.btnBuscarArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).BeginInit();
             this.pnlFondo.SuspendLayout();
@@ -130,6 +131,33 @@
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(593, 219);
             this.pnlFondo.TabIndex = 6;
+            // 
+            // btnUrlCheck
+            // 
+            this.btnUrlCheck.Location = new System.Drawing.Point(257, 53);
+            this.btnUrlCheck.Name = "btnUrlCheck";
+            this.btnUrlCheck.Size = new System.Drawing.Size(72, 47);
+            this.btnUrlCheck.TabIndex = 15;
+            this.btnUrlCheck.Text = "URL Check";
+            this.btnUrlCheck.UseVisualStyleBackColor = true;
+            this.btnUrlCheck.Click += new System.EventHandler(this.btnUrlCheck_Click);
+            // 
+            // txbUrlImagen
+            // 
+            this.txbUrlImagen.Location = new System.Drawing.Point(341, 15);
+            this.txbUrlImagen.Name = "txbUrlImagen";
+            this.txbUrlImagen.Size = new System.Drawing.Size(203, 22);
+            this.txbUrlImagen.TabIndex = 14;
+            // 
+            // lblUrl
+            // 
+            this.lblUrl.AutoSize = true;
+            this.lblUrl.BackColor = System.Drawing.Color.DarkGray;
+            this.lblUrl.Location = new System.Drawing.Point(254, 18);
+            this.lblUrl.Name = "lblUrl";
+            this.lblUrl.Size = new System.Drawing.Size(75, 16);
+            this.lblUrl.TabIndex = 13;
+            this.lblUrl.Text = "Url Imagen:";
             // 
             // pbxUrlImagen
             // 
@@ -243,38 +271,22 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo: ";
             // 
-            // lblUrl
+            // btnBuscarArticulo
             // 
-            this.lblUrl.AutoSize = true;
-            this.lblUrl.BackColor = System.Drawing.Color.DarkGray;
-            this.lblUrl.Location = new System.Drawing.Point(254, 18);
-            this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(75, 16);
-            this.lblUrl.TabIndex = 13;
-            this.lblUrl.Text = "Url Imagen:";
-            // 
-            // txbUrlImagen
-            // 
-            this.txbUrlImagen.Location = new System.Drawing.Point(341, 15);
-            this.txbUrlImagen.Name = "txbUrlImagen";
-            this.txbUrlImagen.Size = new System.Drawing.Size(203, 22);
-            this.txbUrlImagen.TabIndex = 14;
-            // 
-            // btnUrlCheck
-            // 
-            this.btnUrlCheck.Location = new System.Drawing.Point(257, 53);
-            this.btnUrlCheck.Name = "btnUrlCheck";
-            this.btnUrlCheck.Size = new System.Drawing.Size(72, 47);
-            this.btnUrlCheck.TabIndex = 15;
-            this.btnUrlCheck.Text = "URL Check";
-            this.btnUrlCheck.UseVisualStyleBackColor = true;
-            this.btnUrlCheck.Click += new System.EventHandler(this.btnUrlCheck_Click);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(906, 119);
+            this.btnBuscarArticulo.Name = "btnBuscarArticulo";
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(149, 41);
+            this.btnBuscarArticulo.TabIndex = 7;
+            this.btnBuscarArticulo.Text = "Buscar Articulo";
+            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.Click += new System.EventHandler(this.button1_Click);
             // 
             // VentanaDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnBuscarArticulo);
             this.Controls.Add(this.pnlFondo);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnMostrarTodo);
@@ -320,5 +332,6 @@
         private System.Windows.Forms.TextBox txbUrlImagen;
         private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.Button btnUrlCheck;
+        private System.Windows.Forms.Button btnBuscarArticulo;
     }
 }
