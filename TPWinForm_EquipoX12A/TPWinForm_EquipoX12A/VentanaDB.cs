@@ -16,7 +16,7 @@ namespace TPWinForm_EquipoX12A
     
     public partial class VentanaDB : Form
     {
-        private List<Articulo> Articulos;
+        public List<Articulo> Articulos;
         public VentanaDB()
         {
             InitializeComponent();
@@ -79,9 +79,28 @@ namespace TPWinForm_EquipoX12A
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dgvArticulos.DataSource = new List<Articulo>();
-            BusquedaArticulo ventanaBusqueda = new BusquedaArticulo();
-            ventanaBusqueda.ShowDialog();
+            try
+            {
+                BusquedaArticulo ventanaBusqueda = new BusquedaArticulo();
+                ventanaBusqueda.ShowDialog();
+
+                if(ventanaBusqueda.ButtonPresionado)
+                {
+                    Articulos = ventanaBusqueda.Articulos;
+                    dgvArticulos.DataSource = Articulos;
+                    dgvArticulos.Columns["IdCategoria"].Visible = false;
+                    dgvArticulos.Columns["IdMarca"].Visible = false;
+                    dgvArticulos.Columns["UrlImagen"].Visible = false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+
         }
     }
 }

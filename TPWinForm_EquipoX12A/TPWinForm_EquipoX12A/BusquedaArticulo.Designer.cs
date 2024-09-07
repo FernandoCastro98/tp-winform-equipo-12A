@@ -33,9 +33,7 @@
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvBusqueda = new System.Windows.Forms.DataGridView();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -82,16 +80,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dgvBusqueda
-            // 
-            this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusqueda.Location = new System.Drawing.Point(284, 25);
-            this.dgvBusqueda.Name = "dgvBusqueda";
-            this.dgvBusqueda.RowHeadersWidth = 51;
-            this.dgvBusqueda.RowTemplate.Height = 24;
-            this.dgvBusqueda.Size = new System.Drawing.Size(569, 150);
-            this.dgvBusqueda.TabIndex = 5;
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(190, 152);
@@ -106,17 +94,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 187);
+            this.ClientSize = new System.Drawing.Size(331, 187);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.dgvBusqueda);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txbNombre);
             this.Controls.Add(this.txbCodigo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "BusquedaArticulo";
-            this.Text = "BusquedaArticulo";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Busqueda de Articulo";
+            this.Load += new System.EventHandler(this.BusquedaArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +118,6 @@
         private System.Windows.Forms.TextBox txbCodigo;
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvBusqueda;
         private System.Windows.Forms.Button btnLimpiar;
     }
 }

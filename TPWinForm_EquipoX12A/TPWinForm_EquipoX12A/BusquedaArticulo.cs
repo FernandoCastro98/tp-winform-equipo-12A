@@ -15,15 +15,16 @@ namespace TPWinForm_EquipoX12A
 {
     public partial class BusquedaArticulo : Form
     {
+        public List<Articulo> Articulos;
         public BusquedaArticulo()
         {
             InitializeComponent();
 
         }
-
-        private bool updatingGrid = false;
+        public bool ButtonPresionado { get; private set; }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ButtonPresionado = true;
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
@@ -34,14 +35,17 @@ namespace TPWinForm_EquipoX12A
                 articulo.Codigo = codigo;
                 articulo.Nombre = nombre;
 
-                List<Articulo> lista = articuloNegocio.buscarArticulo(articulo);
-                dgvBusqueda.DataSource = lista;
+                Articulos = articuloNegocio.buscarArticulo(articulo);
 
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            finally
+            {
+                this.Close();
             }
             
         }
@@ -60,7 +64,11 @@ namespace TPWinForm_EquipoX12A
         {
             txbCodigo.Enabled = true;
             txbNombre.Enabled = true;
-            dgvBusqueda.DataSource = new List<Articulo>();
+        }
+
+        private void BusquedaArticulo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
