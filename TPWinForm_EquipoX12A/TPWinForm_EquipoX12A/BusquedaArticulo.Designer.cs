@@ -69,6 +69,7 @@
             this.txbNombre.Size = new System.Drawing.Size(150, 22);
             this.txbNombre.TabIndex = 3;
             this.txbNombre.Click += new System.EventHandler(this.txbNombre_Click);
+            this.txbNombre.TextChanged += new System.EventHandler(this.txbNombre_TextChanged);
             // 
             // btnBuscar
             // 

@@ -25,10 +25,13 @@ namespace TPWinForm_EquipoX12A
         private void VentanaDB_Load(object sender, EventArgs e)
         {
             pnlFondo.Visible = false;
+            pnlFondoBusqueda.Visible = false;
         }
 
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
+            pnlFondo.Visible = false;
+            pnlFondoBusqueda.Visible = false;
             ArticuloNegocio ArtNeg = new ArticuloNegocio();
 
             Articulos = ArtNeg.listar();
@@ -42,7 +45,7 @@ namespace TPWinForm_EquipoX12A
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         {
             pnlFondo.Visible = true;
-            
+            pnlFondoBusqueda.Visible = false;
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -76,23 +79,31 @@ namespace TPWinForm_EquipoX12A
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBuscarArticulo_Click(object sender, EventArgs e)
         {
+            pnlFondo.Visible = false;
+            pnlFondoBusqueda.Visible = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
-                BusquedaArticulo ventanaBusqueda = new BusquedaArticulo();
-                ventanaBusqueda.ShowDialog();
+                Articulo articulo = new Articulo();
+                articulo.Codigo = (string)txbCodigoBuscar.Text;
+                articulo.Nombre = (string)txbNombreBuscar.Text;
 
-                if(ventanaBusqueda.ButtonPresionado)
-                {
-                    Articulos = ventanaBusqueda.Articulos;
-                    dgvArticulos.DataSource = Articulos;
-                    dgvArticulos.Columns["IdCategoria"].Visible = false;
-                    dgvArticulos.Columns["IdMarca"].Visible = false;
-                    dgvArticulos.Columns["UrlImagen"].Visible = false;
-                }
-                
+                Articulos = articuloNegocio.buscarArticulo(articulo);
+                dgvArticulos.DataSource = Articulos;
+                dgvArticulos.Columns["IdCategoria"].Visible = false;
+                dgvArticulos.Columns["IdMarca"].Visible = false;
+                dgvArticulos.Columns["UrlImagen"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -100,7 +111,41 @@ namespace TPWinForm_EquipoX12A
                 throw ex;
             }
             
+        }
 
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txbCodigoBuscar.Enabled = true;
+            txbNombreBuscar.Enabled = true;
+        }
+
+        private void txbCodigoBuscar_Click(object sender, EventArgs e)
+        {
+            txbNombreBuscar.Enabled = false;
+        }
+
+        private void txbNombreBuscar_Click(object sender, EventArgs e)
+        {
+            txbCodigoBuscar.Enabled = false;
+        }
+
+        private void txbCodigoBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llamar al método del botón al presionar Enter
+                btnBuscar_Click(sender, e);
+            }
+        }
+
+        private void txbNombreBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llamar al método del botón al presionar Enter
+                btnBuscar_Click(sender, e);
+            }
         }
     }
 }

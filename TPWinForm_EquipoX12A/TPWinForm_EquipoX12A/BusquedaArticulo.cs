@@ -70,5 +70,10 @@ namespace TPWinForm_EquipoX12A
         {
 
         }
+
+        private void txbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
