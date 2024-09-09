@@ -17,6 +17,7 @@ namespace TPWinForm_EquipoX12A
     public partial class VentanaDB : Form
     {
         public List<Articulo> Articulos;
+
         public VentanaDB()
         {
             InitializeComponent();

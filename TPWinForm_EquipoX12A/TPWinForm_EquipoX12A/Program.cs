@@ -16,7 +16,7 @@ namespace TPWinForm_EquipoX12A
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentanaDB());
+            Application.Run(new frmVentanaPrincipal());
         }
     }
 }
