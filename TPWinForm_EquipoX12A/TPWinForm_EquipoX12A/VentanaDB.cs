@@ -17,7 +17,6 @@ namespace TPWinForm_EquipoX12A
     public partial class VentanaDB : Form
     {
         public List<Articulo> Articulos;
-
         public VentanaDB()
         {
             InitializeComponent();
@@ -146,6 +145,51 @@ namespace TPWinForm_EquipoX12A
             {
                 // Llamar al método del botón al presionar Enter
                 btnBuscar_Click(sender, e);
+            }
+        }
+
+        private void btnConfirmarBusqueda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Articulo articulo = new Articulo();
+                articulo.Codigo = txbIngresarCodigo.Text;
+                articulo.Nombre = txbIngresarNombre.Text;
+                articulo.Descripcion = txbIngresarDescripcion.Text;
+                articulo.IdCategoria = int.Parse(txbIngresarIdCategoria.Text);
+                articulo.IdMarca = int.Parse(txbIngresarIdMarca.Text);
+                articulo.Precio = decimal.Parse(txbIngresarPrecio.Text);
+                articulo.UrlImagen = txbUrlImagen.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en el formato de los datos ingresados...","Error");
+            }
+
+            
+        }
+
+        private void txbIngresarIdMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbIngresarIdCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbIngresarPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
