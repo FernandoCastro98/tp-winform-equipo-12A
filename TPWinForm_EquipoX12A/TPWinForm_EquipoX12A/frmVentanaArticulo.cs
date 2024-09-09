@@ -14,10 +14,10 @@ using negocio;
 namespace TPWinForm_EquipoX12A
 {
     
-    public partial class VentanaDB : Form
+    public partial class frmVentanaArticulo : Form
     {
         public List<Articulo> Articulos;
-        public VentanaDB()
+        public frmVentanaArticulo()
         {
             InitializeComponent();
         }

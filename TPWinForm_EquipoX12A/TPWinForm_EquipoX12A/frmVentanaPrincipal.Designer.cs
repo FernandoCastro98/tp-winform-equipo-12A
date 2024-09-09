@@ -38,59 +38,65 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnMostrarDB,
             this.tsbtnMostrarMarca,
             this.tsbtnMostrarDescripcion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1067, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            
             // 
             // tsbtnMostrarDB
             // 
-            this.tsbtnMostrarDB.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnMostrarDB.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnMostrarDB.Image")));
+            this.tsbtnMostrarDB.AutoSize = false;
+            this.tsbtnMostrarDB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbtnMostrarDB.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsbtnMostrarDB.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnMostrarDB.Name = "tsbtnMostrarDB";
-            this.tsbtnMostrarDB.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnMostrarDB.Text = "MostrarVentana";
+            this.tsbtnMostrarDB.Size = new System.Drawing.Size(75, 25);
+            this.tsbtnMostrarDB.Text = "ARTICULOS";
+            this.tsbtnMostrarDB.ToolTipText = "ARTICULOS";
             this.tsbtnMostrarDB.Click += new System.EventHandler(this.tsbtnMostrarDB_Click);
             // 
             // tsbtnMostrarMarca
             // 
-            this.tsbtnMostrarMarca.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnMostrarMarca.AutoSize = false;
+            this.tsbtnMostrarMarca.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnMostrarMarca.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsbtnMostrarMarca.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnMostrarMarca.Image")));
             this.tsbtnMostrarMarca.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnMostrarMarca.Name = "tsbtnMostrarMarca";
-            this.tsbtnMostrarMarca.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnMostrarMarca.Text = "MostrarMarca";
+            this.tsbtnMostrarMarca.Size = new System.Drawing.Size(75, 25);
+            this.tsbtnMostrarMarca.Text = "MARCAS";
             this.tsbtnMostrarMarca.Click += new System.EventHandler(this.tsbtnMostrarMarca_Click);
             // 
             // tsbtnMostrarDescripcion
             // 
-            this.tsbtnMostrarDescripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnMostrarDescripcion.AutoSize = false;
+            this.tsbtnMostrarDescripcion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnMostrarDescripcion.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsbtnMostrarDescripcion.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnMostrarDescripcion.Image")));
             this.tsbtnMostrarDescripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnMostrarDescripcion.Name = "tsbtnMostrarDescripcion";
-            this.tsbtnMostrarDescripcion.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnMostrarDescripcion.Text = "MostrarDescripcion";
+            this.tsbtnMostrarDescripcion.Size = new System.Drawing.Size(100, 25);
+            this.tsbtnMostrarDescripcion.Text = "DESCRIPCIONES";
             this.tsbtnMostrarDescripcion.Click += new System.EventHandler(this.tsbtnMostrarDescripcion_Click);
             // 
             // frmVentanaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmVentanaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmVentanaPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

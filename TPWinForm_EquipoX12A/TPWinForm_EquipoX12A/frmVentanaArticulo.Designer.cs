@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_EquipoX12A
 {
-    partial class VentanaDB
+    partial class frmVentanaArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -70,17 +70,17 @@
             // lblContenidoDB
             // 
             this.lblContenidoDB.AutoSize = true;
-            this.lblContenidoDB.Location = new System.Drawing.Point(17, 16);
+            this.lblContenidoDB.Location = new System.Drawing.Point(14, 18);
             this.lblContenidoDB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContenidoDB.Name = "lblContenidoDB";
-            this.lblContenidoDB.Size = new System.Drawing.Size(90, 16);
+            this.lblContenidoDB.Size = new System.Drawing.Size(83, 16);
             this.lblContenidoDB.TabIndex = 0;
-            this.lblContenidoDB.Text = "Contenido DB";
+            this.lblContenidoDB.Text = "ARTICULOS";
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(16, 62);
+            this.dgvArticulos.Location = new System.Drawing.Point(13, 64);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
@@ -90,7 +90,7 @@
             // 
             // pbxProducto
             // 
-            this.pbxProducto.Location = new System.Drawing.Point(20, 308);
+            this.pbxProducto.Location = new System.Drawing.Point(17, 310);
             this.pbxProducto.Name = "pbxProducto";
             this.pbxProducto.Size = new System.Drawing.Size(249, 219);
             this.pbxProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             // 
             // btnMostrarTodo
             // 
-            this.btnMostrarTodo.Location = new System.Drawing.Point(906, 62);
+            this.btnMostrarTodo.Location = new System.Drawing.Point(903, 64);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
             this.btnMostrarTodo.Size = new System.Drawing.Size(149, 40);
             this.btnMostrarTodo.TabIndex = 3;
@@ -110,7 +110,7 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(906, 170);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(903, 172);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(149, 43);
             this.btnAgregarArticulo.TabIndex = 4;
@@ -138,7 +138,7 @@
             this.pnlFondo.Controls.Add(this.lblNombre);
             this.pnlFondo.Controls.Add(this.txbIngresarCodigo);
             this.pnlFondo.Controls.Add(this.lblCodigo);
-            this.pnlFondo.Location = new System.Drawing.Point(286, 308);
+            this.pnlFondo.Location = new System.Drawing.Point(283, 310);
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(604, 219);
             this.pnlFondo.TabIndex = 6;
@@ -298,7 +298,7 @@
             // 
             // btnBuscarArticulo
             // 
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(906, 115);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(903, 117);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
             this.btnBuscarArticulo.Size = new System.Drawing.Size(149, 41);
             this.btnBuscarArticulo.TabIndex = 7;
@@ -308,7 +308,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(906, 226);
+            this.btnEliminar.Location = new System.Drawing.Point(903, 228);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(149, 43);
             this.btnEliminar.TabIndex = 8;
@@ -325,7 +325,7 @@
             this.pnlFondoBusqueda.Controls.Add(this.txbCodigoBuscar);
             this.pnlFondoBusqueda.Controls.Add(this.lblNombreBusqueda);
             this.pnlFondoBusqueda.Controls.Add(this.lblCodigoBusqueda);
-            this.pnlFondoBusqueda.Location = new System.Drawing.Point(906, 308);
+            this.pnlFondoBusqueda.Location = new System.Drawing.Point(903, 310);
             this.pnlFondoBusqueda.Name = "pnlFondoBusqueda";
             this.pnlFondoBusqueda.Size = new System.Drawing.Size(149, 219);
             this.pnlFondoBusqueda.TabIndex = 9;
@@ -390,13 +390,11 @@
             this.lblCodigoBusqueda.TabIndex = 0;
             this.lblCodigoBusqueda.Text = "Codigo:";
             // 
-            // VentanaDB
+            // frmVentanaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.ControlBox = false;
             this.Controls.Add(this.pnlFondoBusqueda);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscarArticulo);
@@ -410,8 +408,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "VentanaDB";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Name = "frmVentanaArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Base de Datos";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.VentanaDB_Load);

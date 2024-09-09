@@ -24,11 +24,11 @@ namespace TPWinForm_EquipoX12A
         private void tsbtnMostrarDB_Click(object sender, EventArgs e)
         {
 
-            VentanaDB ventanaDB = new VentanaDB();
+            frmVentanaArticulo ventanaDB = new frmVentanaArticulo();
 
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(VentanaDB))
+                if (item.GetType() == typeof(frmVentanaArticulo))
                 {
                     MessageBox.Show("Ya existe una ventana abierta");
                     return;
