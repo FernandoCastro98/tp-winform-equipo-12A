@@ -18,35 +18,35 @@ namespace TPWinForm_EquipoX12A
             InitializeComponent();
 
         }
-        private VentanaDB ventanaDB = new VentanaDB();
-        private frmVentanaMarca ventanaMarca = new frmVentanaMarca();
-        private frmVertanaDescripcion ventanaDesc = new frmVertanaDescripcion();
+
+
 
         private void tsbtnMostrarDB_Click(object sender, EventArgs e)
         {
 
-            
-            foreach (var item in Application.OpenForms) 
-            { 
+            VentanaDB ventanaDB = new VentanaDB();
+
+            foreach (var item in Application.OpenForms)
+            {
                 if (item.GetType() == typeof(VentanaDB))
                 {
                     MessageBox.Show("Ya existe una ventana abierta");
                     return;
                 }
             }
-            ventanaMarca.Close();
-            ventanaDesc.Close();
-            ventanaDB.MdiParent = this;                  
+            CerrarVentanasAbiertas();
+            ventanaDB.MdiParent = this;
             ventanaDB.Show();
-            
+
 
         }
 
-        
+
 
         private void tsbtnMostrarMarca_Click(object sender, EventArgs e)
         {
-            
+            frmVentanaMarca ventanaMarca = new frmVentanaMarca();
+
             foreach (var item in Application.OpenForms)
             {
                 if (item.GetType() == typeof(frmVentanaMarca))
@@ -55,16 +55,16 @@ namespace TPWinForm_EquipoX12A
                     return;
                 }
             }
-            ventanaDB.Close();
-            ventanaDesc.Close();
+            CerrarVentanasAbiertas();
             ventanaMarca.MdiParent = this;
             ventanaMarca.Show();
-            
+
         }
 
         private void tsbtnMostrarDescripcion_Click(object sender, EventArgs e)
         {
-            
+            frmVertanaDescripcion ventanaDesc = new frmVertanaDescripcion();
+
             foreach (var item in Application.OpenForms)
             {
                 if (item.GetType() == typeof(frmVertanaDescripcion))
@@ -73,12 +73,18 @@ namespace TPWinForm_EquipoX12A
                     return;
                 }
             }
-            ventanaDB.Close();
-            ventanaMarca.Close();
+            CerrarVentanasAbiertas();
             ventanaDesc.MdiParent = this;
             ventanaDesc.Show();
-            
+
         }
-        
+        private void CerrarVentanasAbiertas()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        }
+
     }
 }
