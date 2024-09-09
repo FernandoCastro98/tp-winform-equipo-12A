@@ -34,7 +34,7 @@
             this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.pnlFondo = new System.Windows.Forms.Panel();
-            this.btnConfirmarBusqueda = new System.Windows.Forms.Button();
+            this.btnConfirmarAgregar = new System.Windows.Forms.Button();
             this.btnUrlCheck = new System.Windows.Forms.Button();
             this.txbUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrl = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@
             // pnlFondo
             // 
             this.pnlFondo.BackColor = System.Drawing.Color.DarkCyan;
-            this.pnlFondo.Controls.Add(this.btnConfirmarBusqueda);
+            this.pnlFondo.Controls.Add(this.btnConfirmarAgregar);
             this.pnlFondo.Controls.Add(this.btnUrlCheck);
             this.pnlFondo.Controls.Add(this.txbUrlImagen);
             this.pnlFondo.Controls.Add(this.lblUrl);
@@ -143,16 +143,16 @@
             this.pnlFondo.Size = new System.Drawing.Size(604, 219);
             this.pnlFondo.TabIndex = 6;
             // 
-            // btnConfirmarBusqueda
+            // btnConfirmarAgregar
             // 
-            this.btnConfirmarBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarBusqueda.Location = new System.Drawing.Point(513, 153);
-            this.btnConfirmarBusqueda.Name = "btnConfirmarBusqueda";
-            this.btnConfirmarBusqueda.Size = new System.Drawing.Size(75, 44);
-            this.btnConfirmarBusqueda.TabIndex = 16;
-            this.btnConfirmarBusqueda.Text = "ACEPTAR";
-            this.btnConfirmarBusqueda.UseVisualStyleBackColor = true;
-            this.btnConfirmarBusqueda.Click += new System.EventHandler(this.btnConfirmarBusqueda_Click);
+            this.btnConfirmarAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarAgregar.Location = new System.Drawing.Point(513, 153);
+            this.btnConfirmarAgregar.Name = "btnConfirmarAgregar";
+            this.btnConfirmarAgregar.Size = new System.Drawing.Size(75, 44);
+            this.btnConfirmarAgregar.TabIndex = 16;
+            this.btnConfirmarAgregar.Text = "ACEPTAR";
+            this.btnConfirmarAgregar.UseVisualStyleBackColor = true;
+            this.btnConfirmarAgregar.Click += new System.EventHandler(this.btnConfirmarAgregar_Click);
             // 
             // btnUrlCheck
             // 
@@ -450,7 +450,7 @@
         private System.Windows.Forms.Label lblUrl;
         private System.Windows.Forms.Button btnUrlCheck;
         private System.Windows.Forms.Button btnBuscarArticulo;
-        private System.Windows.Forms.Button btnConfirmarBusqueda;
+        private System.Windows.Forms.Button btnConfirmarAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Panel pnlFondoBusqueda;
         private System.Windows.Forms.Label lblNombreBusqueda;

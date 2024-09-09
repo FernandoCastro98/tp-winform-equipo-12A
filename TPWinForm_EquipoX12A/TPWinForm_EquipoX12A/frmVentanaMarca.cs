@@ -16,5 +16,10 @@ namespace TPWinForm_EquipoX12A
         {
             InitializeComponent();
         }
+
+        private void btnConfirmarBusqueda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

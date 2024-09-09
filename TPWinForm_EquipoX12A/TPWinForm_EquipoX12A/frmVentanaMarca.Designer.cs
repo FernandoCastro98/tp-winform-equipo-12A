@@ -196,6 +196,7 @@
             this.btnConfirmarBusqueda.TabIndex = 16;
             this.btnConfirmarBusqueda.Text = "ACEPTAR";
             this.btnConfirmarBusqueda.UseVisualStyleBackColor = true;
+            this.btnConfirmarBusqueda.Click += new System.EventHandler(this.btnConfirmarBusqueda_Click);
             // 
             // btnUrlCheck
             // 
@@ -410,7 +411,7 @@
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lblNombreVenana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVentanaMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana de Marcas";
