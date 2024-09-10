@@ -1,0 +1,9 @@
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\bin\Debug\negocio.dll
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\bin\Debug\negocio.pdb
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\bin\Debug\dominio.dll
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\bin\Debug\dominio.pdb
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\obj\Debug\negocio.dll
+C:\Users\herna\Desktop\Nueva carpeta\tp-winform-equipo-12A\TPWinForm_EquipoX12A\negocio\obj\Debug\negocio.pdb
