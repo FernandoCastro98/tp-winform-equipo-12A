@@ -93,6 +93,8 @@
     <EmbeddedResource Include="frmVentanaArticulo.resx">
       <DependentUpon>frmVentanaArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\dominio.Categoria.datasource" />
+    <None Include="Properties\DataSources\dominio.Marca.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -32,14 +32,12 @@ namespace TPWinForm_EquipoX12A
         {
             pnlFondo.Visible = false;
             pnlFondoBusqueda.Visible = false;
+            pbxProducto.Load("https://plus.unsplash.com/premium_photo-1682310093719-443b6fe140e8?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             ArticuloNegocio ArtNeg = new ArticuloNegocio();
-
+            ImagenNegocio imgNeg = new ImagenNegocio();
             Articulos = ArtNeg.listar();
-            pbxProducto.Load(Articulos[0].UrlImagen);
             dgvArticulos.DataSource = Articulos;
-            dgvArticulos.Columns["IdCategoria"].Visible = false;
-            dgvArticulos.Columns["IdMarca"].Visible = false;
-            dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
         }
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
@@ -50,17 +48,28 @@ namespace TPWinForm_EquipoX12A
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-           
-            
+            ImagenNegocio imgNeg = new ImagenNegocio();
+            List<Imagen> listaImagen = imgNeg.listar();
+
             try
             {
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                pbxProducto.Load(seleccionado.UrlImagen);
+                foreach (Imagen imagen in listaImagen)
+                {
+                    if(imagen.IdArticulo == seleccionado.Id)
+                    {
+                        pbxProducto.Load(imagen.UrlImagen);
+                        break;
+                    }
+                }
+                
             }
             catch (Exception)
             {
                 pbxProducto.Load("https://plus.unsplash.com/premium_photo-1682310093719-443b6fe140e8?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
             }
+
+
         }
 
         private void btnUrlCheck_Click(object sender, EventArgs e)
@@ -101,9 +110,7 @@ namespace TPWinForm_EquipoX12A
 
                 Articulos = articuloNegocio.buscarArticulo(articulo);
                 dgvArticulos.DataSource = Articulos;
-                dgvArticulos.Columns["IdCategoria"].Visible = false;
-                dgvArticulos.Columns["IdMarca"].Visible = false;
-                dgvArticulos.Columns["UrlImagen"].Visible = false;
+                dgvArticulos.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -176,21 +183,26 @@ namespace TPWinForm_EquipoX12A
 
         private void btnConfirmarAgregar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             try
             {
                 Articulo articulo = new Articulo();
                 articulo.Codigo = txbIngresarCodigo.Text;
                 articulo.Nombre = txbIngresarNombre.Text;
                 articulo.Descripcion = txbIngresarDescripcion.Text;
-                articulo.IdCategoria = int.Parse(txbIngresarIdCategoria.Text);
-                articulo.IdMarca = int.Parse(txbIngresarIdMarca.Text);
                 articulo.Precio = decimal.Parse(txbIngresarPrecio.Text);
-                articulo.UrlImagen = txbUrlImagen.Text;
+                articuloNegocio.cargarArticulo(articulo);
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en el formato de los datos ingresados...", "Error");
+                //MessageBox.Show("Error en el formato de los datos ingresados...", "Error");
             }
+
+        }
+
+        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

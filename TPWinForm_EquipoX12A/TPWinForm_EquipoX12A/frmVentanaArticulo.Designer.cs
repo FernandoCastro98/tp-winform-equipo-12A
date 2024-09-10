@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblContenidoDB = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pbxProducto = new System.Windows.Forms.PictureBox();
@@ -40,12 +41,10 @@
             this.lblUrl = new System.Windows.Forms.Label();
             this.pbxUrlImagen = new System.Windows.Forms.PictureBox();
             this.txbIngresarPrecio = new System.Windows.Forms.TextBox();
-            this.txbIngresarIdCategoria = new System.Windows.Forms.TextBox();
-            this.txbIngresarIdMarca = new System.Windows.Forms.TextBox();
             this.txbIngresarDescripcion = new System.Windows.Forms.TextBox();
             this.txbIngresarNombre = new System.Windows.Forms.TextBox();
-            this.lblIdCateogria = new System.Windows.Forms.Label();
-            this.lblIdMarca = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -60,11 +59,17 @@
             this.txbCodigoBuscar = new System.Windows.Forms.TextBox();
             this.lblNombreBusqueda = new System.Windows.Forms.Label();
             this.lblCodigoBusqueda = new System.Windows.Forms.Label();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
+            this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).BeginInit();
             this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).BeginInit();
             this.pnlFondoBusqueda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContenidoDB
@@ -121,18 +126,18 @@
             // pnlFondo
             // 
             this.pnlFondo.BackColor = System.Drawing.Color.DarkCyan;
+            this.pnlFondo.Controls.Add(this.cbxCategoria);
+            this.pnlFondo.Controls.Add(this.cbxMarca);
             this.pnlFondo.Controls.Add(this.btnConfirmarAgregar);
             this.pnlFondo.Controls.Add(this.btnUrlCheck);
             this.pnlFondo.Controls.Add(this.txbUrlImagen);
             this.pnlFondo.Controls.Add(this.lblUrl);
             this.pnlFondo.Controls.Add(this.pbxUrlImagen);
             this.pnlFondo.Controls.Add(this.txbIngresarPrecio);
-            this.pnlFondo.Controls.Add(this.txbIngresarIdCategoria);
-            this.pnlFondo.Controls.Add(this.txbIngresarIdMarca);
             this.pnlFondo.Controls.Add(this.txbIngresarDescripcion);
             this.pnlFondo.Controls.Add(this.txbIngresarNombre);
-            this.pnlFondo.Controls.Add(this.lblIdCateogria);
-            this.pnlFondo.Controls.Add(this.lblIdMarca);
+            this.pnlFondo.Controls.Add(this.lblCategoria);
+            this.pnlFondo.Controls.Add(this.lblMarca);
             this.pnlFondo.Controls.Add(this.lblDescripcion);
             this.pnlFondo.Controls.Add(this.lblPrecio);
             this.pnlFondo.Controls.Add(this.lblNombre);
@@ -198,22 +203,6 @@
             this.txbIngresarPrecio.TabIndex = 11;
             this.txbIngresarPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIngresarPrecio_KeyPress);
             // 
-            // txbIngresarIdCategoria
-            // 
-            this.txbIngresarIdCategoria.Location = new System.Drawing.Point(116, 142);
-            this.txbIngresarIdCategoria.Name = "txbIngresarIdCategoria";
-            this.txbIngresarIdCategoria.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarIdCategoria.TabIndex = 10;
-            this.txbIngresarIdCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIngresarIdCategoria_KeyPress);
-            // 
-            // txbIngresarIdMarca
-            // 
-            this.txbIngresarIdMarca.Location = new System.Drawing.Point(116, 111);
-            this.txbIngresarIdMarca.Name = "txbIngresarIdMarca";
-            this.txbIngresarIdMarca.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarIdMarca.TabIndex = 9;
-            this.txbIngresarIdMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIngresarIdMarca_KeyPress);
-            // 
             // txbIngresarDescripcion
             // 
             this.txbIngresarDescripcion.Location = new System.Drawing.Point(116, 78);
@@ -228,26 +217,26 @@
             this.txbIngresarNombre.Size = new System.Drawing.Size(120, 22);
             this.txbIngresarNombre.TabIndex = 7;
             // 
-            // lblIdCateogria
+            // lblCategoria
             // 
-            this.lblIdCateogria.AutoSize = true;
-            this.lblIdCateogria.BackColor = System.Drawing.Color.DarkGray;
-            this.lblIdCateogria.Enabled = false;
-            this.lblIdCateogria.Location = new System.Drawing.Point(17, 145);
-            this.lblIdCateogria.Name = "lblIdCateogria";
-            this.lblIdCateogria.Size = new System.Drawing.Size(83, 16);
-            this.lblIdCateogria.TabIndex = 6;
-            this.lblIdCateogria.Text = "Id Categoria:";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.DarkGray;
+            this.lblCategoria.Enabled = false;
+            this.lblCategoria.Location = new System.Drawing.Point(17, 145);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(66, 16);
+            this.lblCategoria.TabIndex = 6;
+            this.lblCategoria.Text = "Categora:";
             // 
-            // lblIdMarca
+            // lblMarca
             // 
-            this.lblIdMarca.AutoSize = true;
-            this.lblIdMarca.BackColor = System.Drawing.Color.DarkGray;
-            this.lblIdMarca.Location = new System.Drawing.Point(17, 114);
-            this.lblIdMarca.Name = "lblIdMarca";
-            this.lblIdMarca.Size = new System.Drawing.Size(62, 16);
-            this.lblIdMarca.TabIndex = 5;
-            this.lblIdMarca.Text = "Id Marca:";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.BackColor = System.Drawing.Color.DarkGray;
+            this.lblMarca.Location = new System.Drawing.Point(17, 114);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(48, 16);
+            this.lblMarca.TabIndex = 5;
+            this.lblMarca.Text = "Marca:";
             // 
             // lblDescripcion
             // 
@@ -390,6 +379,33 @@
             this.lblCodigoBusqueda.TabIndex = 0;
             this.lblCodigoBusqueda.Text = "Codigo:";
             // 
+            // cbxMarca
+            // 
+            this.cbxMarca.DataSource = this.marcaBindingSource;
+            this.cbxMarca.DisplayMember = "Descripcion";
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Location = new System.Drawing.Point(116, 111);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(120, 24);
+            this.cbxMarca.TabIndex = 10;
+            this.cbxMarca.SelectedIndexChanged += new System.EventHandler(this.cbxMarca_SelectedIndexChanged);
+            // 
+            // marcaBindingSource
+            // 
+            this.marcaBindingSource.DataSource = typeof(dominio.Marca);
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(116, 142);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(120, 24);
+            this.cbxCategoria.TabIndex = 17;
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(dominio.Categoria);
+            // 
             // frmVentanaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -420,6 +436,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).EndInit();
             this.pnlFondoBusqueda.ResumeLayout(false);
             this.pnlFondoBusqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,15 +453,13 @@
         private System.Windows.Forms.Panel pnlFondo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txbIngresarCodigo;
-        private System.Windows.Forms.Label lblIdCateogria;
-        private System.Windows.Forms.Label lblIdMarca;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txbIngresarNombre;
         private System.Windows.Forms.TextBox txbIngresarPrecio;
-        private System.Windows.Forms.TextBox txbIngresarIdCategoria;
-        private System.Windows.Forms.TextBox txbIngresarIdMarca;
         private System.Windows.Forms.TextBox txbIngresarDescripcion;
         private System.Windows.Forms.PictureBox pbxUrlImagen;
         private System.Windows.Forms.TextBox txbUrlImagen;
@@ -459,5 +475,9 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txbNombreBuscar;
         private System.Windows.Forms.TextBox txbCodigoBuscar;
+        private System.Windows.Forms.ComboBox cbxMarca;
+        private System.Windows.Forms.BindingSource marcaBindingSource;
+        private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
     }
 }

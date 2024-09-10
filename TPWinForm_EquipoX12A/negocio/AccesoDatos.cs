@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using dominio;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace negocio
 {
@@ -33,11 +34,7 @@ namespace negocio
             comando.CommandType = System.Data.CommandType.Text; 
             comando.CommandText = consulta; //El nombre de las tablas 
         }
-       /* public void LeerTodo()
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select Codigo, Nombre, A.Descripcion, Precio, M.Descripcion, C.Descripcion from Articulos A, Marcas M, Categorias C"; 
-        }*/
+
         public void EjecutarLectura()
         {
             comando.Connection = conexion;
@@ -53,7 +50,31 @@ namespace negocio
                 throw ex;
             }
 
+        }
 
+        //Convierte los datos de Artiuclo para poder ser leidos por la BBDD.
+        public void ConvertirDatos(Articulo articulo)
+        {
+            comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
+            comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
+            comando.Parameters.AddWithValue("@Precio", articulo.Precio);
+            comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
+            comando.Parameters.AddWithValue("@idCategori", articulo.Categoria.Id);
+        }
+
+        //Ejecuta el comando previamente cargado
+        public void EjecutarAccion()
+        {
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery(); 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 

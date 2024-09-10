@@ -4,33 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
-using System.Data.SqlClient;
 
 namespace negocio
 {
-    public class CategoriaNegocio
+    public class ImagenNegocio
     {
-        public List<Categoria> listar()
+        public List<Imagen> listar()
         {
-            List<Categoria> lista = new List<Categoria>();
+            List<Imagen> imagenes = new List<Imagen>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("Select Id, Descripcion from Categorias");
+                datos.setearConsulta("SELECT Id, IdArticulo, ImagenUrl FROM IMAGENES");
                 datos.EjecutarLectura();
-
                 while (datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"]; 
-                    lista.Add(aux);
+                    Imagen imagen = new Imagen();
+                    imagen.Id = (int)datos.Lector["Id"];
+                    imagen.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    imagen.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    imagenes.Add(imagen);   
                 }
 
 
-                return lista; 
-
+                return imagenes;
             }
             catch (Exception ex)
             {
@@ -41,9 +39,6 @@ namespace negocio
             {
                 datos.CerrarConexion();
             }
-
         }
-
-
-    }	        
+    }
 }
