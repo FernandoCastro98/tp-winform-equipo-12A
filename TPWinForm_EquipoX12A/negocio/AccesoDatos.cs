@@ -58,9 +58,9 @@ namespace negocio
             comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
             comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
             comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
-            comando.Parameters.AddWithValue("@Precio", articulo.Precio);
             comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
-            comando.Parameters.AddWithValue("@idCategori", articulo.Categoria.Id);
+            comando.Parameters.AddWithValue("@idCategoria", articulo.Categoria.Id);
+            comando.Parameters.AddWithValue("@Precio", articulo.Precio);
         }
 
         //Ejecuta el comando previamente cargado

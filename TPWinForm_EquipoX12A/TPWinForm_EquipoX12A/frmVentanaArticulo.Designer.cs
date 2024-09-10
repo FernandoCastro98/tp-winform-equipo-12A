@@ -35,6 +35,9 @@
             this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.pnlFondo = new System.Windows.Forms.Panel();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
+            this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnConfirmarAgregar = new System.Windows.Forms.Button();
             this.btnUrlCheck = new System.Windows.Forms.Button();
             this.txbUrlImagen = new System.Windows.Forms.TextBox();
@@ -59,16 +62,13 @@
             this.txbCodigoBuscar = new System.Windows.Forms.TextBox();
             this.lblNombreBusqueda = new System.Windows.Forms.Label();
             this.lblCodigoBusqueda = new System.Windows.Forms.Label();
-            this.cbxMarca = new System.Windows.Forms.ComboBox();
-            this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).BeginInit();
             this.pnlFondo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).BeginInit();
             this.pnlFondoBusqueda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,6 +147,30 @@
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(604, 219);
             this.pnlFondo.TabIndex = 6;
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(116, 142);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(120, 24);
+            this.cbxCategoria.TabIndex = 17;
+            // 
+            // cbxMarca
+            // 
+            this.cbxMarca.DataSource = this.marcaBindingSource;
+            this.cbxMarca.DisplayMember = "Descripcion";
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Location = new System.Drawing.Point(116, 111);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(120, 24);
+            this.cbxMarca.TabIndex = 10;
+            // 
+            // marcaBindingSource
+            // 
+            this.marcaBindingSource.DataSource = typeof(dominio.Marca);
             // 
             // btnConfirmarAgregar
             // 
@@ -379,29 +403,6 @@
             this.lblCodigoBusqueda.TabIndex = 0;
             this.lblCodigoBusqueda.Text = "Codigo:";
             // 
-            // cbxMarca
-            // 
-            this.cbxMarca.DataSource = this.marcaBindingSource;
-            this.cbxMarca.DisplayMember = "Descripcion";
-            this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(116, 111);
-            this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(120, 24);
-            this.cbxMarca.TabIndex = 10;
-            this.cbxMarca.SelectedIndexChanged += new System.EventHandler(this.cbxMarca_SelectedIndexChanged);
-            // 
-            // marcaBindingSource
-            // 
-            this.marcaBindingSource.DataSource = typeof(dominio.Marca);
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(116, 142);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(120, 24);
-            this.cbxCategoria.TabIndex = 17;
-            // 
             // categoriaBindingSource
             // 
             this.categoriaBindingSource.DataSource = typeof(dominio.Categoria);
@@ -433,10 +434,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).EndInit();
             this.pnlFondo.ResumeLayout(false);
             this.pnlFondo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).EndInit();
             this.pnlFondoBusqueda.ResumeLayout(false);
             this.pnlFondoBusqueda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -16,7 +16,6 @@ namespace TPWinForm_EquipoX12A
     
     public partial class frmVentanaArticulo : Form
     {
-        public List<Articulo> Articulos;
         public frmVentanaArticulo()
         {
             InitializeComponent();
@@ -30,6 +29,7 @@ namespace TPWinForm_EquipoX12A
 
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
+            List<Articulo> Articulos;
             pnlFondo.Visible = false;
             pnlFondoBusqueda.Visible = false;
             pbxProducto.Load("https://plus.unsplash.com/premium_photo-1682310093719-443b6fe140e8?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -44,30 +44,35 @@ namespace TPWinForm_EquipoX12A
         {
             pnlFondo.Visible = true;
             pnlFondoBusqueda.Visible = false;
+            NegocioMarca marcas = new NegocioMarca();
+            CategoriaNegocio categorias = new CategoriaNegocio();
+            cbxMarca.DataSource = marcas.listar();
+            cbxCategoria.DataSource = categorias.listar();
+
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            ImagenNegocio imgNeg = new ImagenNegocio();
-            List<Imagen> listaImagen = imgNeg.listar();
+            //ImagenNegocio imgNeg = new ImagenNegocio();
+            //List<Imagen> listaImagen = imgNeg.listar();
 
-            try
-            {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                foreach (Imagen imagen in listaImagen)
-                {
-                    if(imagen.IdArticulo == seleccionado.Id)
-                    {
-                        pbxProducto.Load(imagen.UrlImagen);
-                        break;
-                    }
-                }
+            //try
+            //{
+            //    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            //    foreach (Imagen imagen in listaImagen)
+            //    {
+            //        if(imagen.IdArticulo == seleccionado.Id)
+            //        {
+            //            pbxProducto.Load(imagen.UrlImagen);
+            //            break;
+            //        }
+            //    }
                 
-            }
-            catch (Exception)
-            {
-                pbxProducto.Load("https://plus.unsplash.com/premium_photo-1682310093719-443b6fe140e8?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    pbxProducto.Load("https://plus.unsplash.com/premium_photo-1682310093719-443b6fe140e8?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            //}
 
 
         }
@@ -102,14 +107,15 @@ namespace TPWinForm_EquipoX12A
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            List<Articulo> Articulos;
             try
             {
                 Articulo articulo = new Articulo();
                 articulo.Codigo = (string)txbCodigoBuscar.Text;
                 articulo.Nombre = (string)txbNombreBuscar.Text;
-
                 Articulos = articuloNegocio.buscarArticulo(articulo);
                 dgvArticulos.DataSource = Articulos;
+
                 dgvArticulos.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
@@ -157,25 +163,18 @@ namespace TPWinForm_EquipoX12A
 
      
 
-        private void txbIngresarIdMarca_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txbIngresarIdCategoria_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+      
 
         private void txbIngresarPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+           
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains("."))
             {
                 e.Handled = true;
             }
@@ -184,26 +183,27 @@ namespace TPWinForm_EquipoX12A
         private void btnConfirmarAgregar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
             try
             {
                 Articulo articulo = new Articulo();
+                articulo.Id = 0;
                 articulo.Codigo = txbIngresarCodigo.Text;
                 articulo.Nombre = txbIngresarNombre.Text;
                 articulo.Descripcion = txbIngresarDescripcion.Text;
                 articulo.Precio = decimal.Parse(txbIngresarPrecio.Text);
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articuloNegocio.cargarArticulo(articulo);
 
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error en el formato de los datos ingresados...", "Error");
+                MessageBox.Show("Error en el formato de los datos ingresados...", "Error");
             }
 
         }
 
-        private void cbxMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

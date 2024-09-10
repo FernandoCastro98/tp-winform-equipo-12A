@@ -61,7 +61,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, A.Precio, A.IdCategoria, A.IdMarca, A.Codigo, A.Nombre, A.Descripcion, I.ImagenUrl ,C.Descripcion AS DesCategoria, M.Descripcion AS DesMarca FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.setearConsulta("SELECT A.Id, A.Precio, A.Codigo, A.Nombre, A.Descripcion, C.Descripcion AS DesCategoria, C.Id AS IdCategoria, M.Descripcion AS DesMarca, M.Id AS IdMarca FROM ARTICULOS A JOIN CATEGORIAS C ON A.IdCategoria = C.Id JOIN MARCAS M ON A.IdMarca = M.Id");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -109,14 +109,11 @@ namespace negocio
 
             try
             {
-                // Preparar la consulta SQL para la inserción
+                
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
                                      "VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
 
-                // Convertir los datos del objeto Articulo a parámetros SQL
                 datos.ConvertirDatos(articuloNuevo);
-
-                // Ejecutar la acción (INSERT)
                 datos.EjecutarAccion();
             }
             catch (Exception ex)
