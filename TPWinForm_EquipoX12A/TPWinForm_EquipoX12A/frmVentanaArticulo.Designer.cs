@@ -34,12 +34,11 @@
             this.pbxProducto = new System.Windows.Forms.PictureBox();
             this.btnMostrarTodo = new System.Windows.Forms.Button();
             this.btnAgregarArticulo = new System.Windows.Forms.Button();
-            this.pnlFondo = new System.Windows.Forms.Panel();
+            this.pnlCargaArticulo = new System.Windows.Forms.Panel();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnConfirmarAgregar = new System.Windows.Forms.Button();
-            this.btnUrlCheck = new System.Windows.Forms.Button();
             this.txbUrlImagen = new System.Windows.Forms.TextBox();
             this.lblUrl = new System.Windows.Forms.Label();
             this.pbxUrlImagen = new System.Windows.Forms.PictureBox();
@@ -65,7 +64,7 @@
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).BeginInit();
-            this.pnlFondo.SuspendLayout();
+            this.pnlCargaArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).BeginInit();
             this.pnlFondoBusqueda.SuspendLayout();
@@ -107,7 +106,7 @@
             this.btnMostrarTodo.Location = new System.Drawing.Point(903, 64);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
             this.btnMostrarTodo.Size = new System.Drawing.Size(149, 40);
-            this.btnMostrarTodo.TabIndex = 3;
+            this.btnMostrarTodo.TabIndex = 0;
             this.btnMostrarTodo.Text = "MOSTRAR";
             this.btnMostrarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMostrarTodo.UseVisualStyleBackColor = true;
@@ -118,35 +117,34 @@
             this.btnAgregarArticulo.Location = new System.Drawing.Point(903, 172);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(149, 43);
-            this.btnAgregarArticulo.TabIndex = 4;
+            this.btnAgregarArticulo.TabIndex = 2;
             this.btnAgregarArticulo.Text = "AGREGAR";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
             this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
-            // pnlFondo
+            // pnlCargaArticulo
             // 
-            this.pnlFondo.BackColor = System.Drawing.Color.DarkCyan;
-            this.pnlFondo.Controls.Add(this.cbxCategoria);
-            this.pnlFondo.Controls.Add(this.cbxMarca);
-            this.pnlFondo.Controls.Add(this.btnConfirmarAgregar);
-            this.pnlFondo.Controls.Add(this.btnUrlCheck);
-            this.pnlFondo.Controls.Add(this.txbUrlImagen);
-            this.pnlFondo.Controls.Add(this.lblUrl);
-            this.pnlFondo.Controls.Add(this.pbxUrlImagen);
-            this.pnlFondo.Controls.Add(this.txbIngresarPrecio);
-            this.pnlFondo.Controls.Add(this.txbIngresarDescripcion);
-            this.pnlFondo.Controls.Add(this.txbIngresarNombre);
-            this.pnlFondo.Controls.Add(this.lblCategoria);
-            this.pnlFondo.Controls.Add(this.lblMarca);
-            this.pnlFondo.Controls.Add(this.lblDescripcion);
-            this.pnlFondo.Controls.Add(this.lblPrecio);
-            this.pnlFondo.Controls.Add(this.lblNombre);
-            this.pnlFondo.Controls.Add(this.txbIngresarCodigo);
-            this.pnlFondo.Controls.Add(this.lblCodigo);
-            this.pnlFondo.Location = new System.Drawing.Point(283, 310);
-            this.pnlFondo.Name = "pnlFondo";
-            this.pnlFondo.Size = new System.Drawing.Size(604, 219);
-            this.pnlFondo.TabIndex = 6;
+            this.pnlCargaArticulo.BackColor = System.Drawing.Color.DarkCyan;
+            this.pnlCargaArticulo.Controls.Add(this.cbxCategoria);
+            this.pnlCargaArticulo.Controls.Add(this.cbxMarca);
+            this.pnlCargaArticulo.Controls.Add(this.btnConfirmarAgregar);
+            this.pnlCargaArticulo.Controls.Add(this.txbUrlImagen);
+            this.pnlCargaArticulo.Controls.Add(this.lblUrl);
+            this.pnlCargaArticulo.Controls.Add(this.pbxUrlImagen);
+            this.pnlCargaArticulo.Controls.Add(this.txbIngresarPrecio);
+            this.pnlCargaArticulo.Controls.Add(this.txbIngresarDescripcion);
+            this.pnlCargaArticulo.Controls.Add(this.txbIngresarNombre);
+            this.pnlCargaArticulo.Controls.Add(this.lblCategoria);
+            this.pnlCargaArticulo.Controls.Add(this.lblMarca);
+            this.pnlCargaArticulo.Controls.Add(this.lblDescripcion);
+            this.pnlCargaArticulo.Controls.Add(this.lblPrecio);
+            this.pnlCargaArticulo.Controls.Add(this.lblNombre);
+            this.pnlCargaArticulo.Controls.Add(this.txbIngresarCodigo);
+            this.pnlCargaArticulo.Controls.Add(this.lblCodigo);
+            this.pnlCargaArticulo.Location = new System.Drawing.Point(283, 310);
+            this.pnlCargaArticulo.Name = "pnlCargaArticulo";
+            this.pnlCargaArticulo.Size = new System.Drawing.Size(604, 219);
+            this.pnlCargaArticulo.TabIndex = 6;
             // 
             // cbxCategoria
             // 
@@ -155,7 +153,7 @@
             this.cbxCategoria.Location = new System.Drawing.Point(116, 142);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(120, 24);
-            this.cbxCategoria.TabIndex = 17;
+            this.cbxCategoria.TabIndex = 4;
             // 
             // cbxMarca
             // 
@@ -166,7 +164,7 @@
             this.cbxMarca.Location = new System.Drawing.Point(116, 111);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(120, 24);
-            this.cbxMarca.TabIndex = 10;
+            this.cbxMarca.TabIndex = 3;
             // 
             // marcaBindingSource
             // 
@@ -178,27 +176,18 @@
             this.btnConfirmarAgregar.Location = new System.Drawing.Point(513, 153);
             this.btnConfirmarAgregar.Name = "btnConfirmarAgregar";
             this.btnConfirmarAgregar.Size = new System.Drawing.Size(75, 44);
-            this.btnConfirmarAgregar.TabIndex = 16;
+            this.btnConfirmarAgregar.TabIndex = 8;
             this.btnConfirmarAgregar.Text = "ACEPTAR";
             this.btnConfirmarAgregar.UseVisualStyleBackColor = true;
             this.btnConfirmarAgregar.Click += new System.EventHandler(this.btnConfirmarAgregar_Click);
-            // 
-            // btnUrlCheck
-            // 
-            this.btnUrlCheck.Location = new System.Drawing.Point(513, 47);
-            this.btnUrlCheck.Name = "btnUrlCheck";
-            this.btnUrlCheck.Size = new System.Drawing.Size(75, 47);
-            this.btnUrlCheck.TabIndex = 15;
-            this.btnUrlCheck.Text = "URL CHECK";
-            this.btnUrlCheck.UseVisualStyleBackColor = true;
-            this.btnUrlCheck.Click += new System.EventHandler(this.btnUrlCheck_Click);
             // 
             // txbUrlImagen
             // 
             this.txbUrlImagen.Location = new System.Drawing.Point(341, 15);
             this.txbUrlImagen.Name = "txbUrlImagen";
             this.txbUrlImagen.Size = new System.Drawing.Size(247, 22);
-            this.txbUrlImagen.TabIndex = 14;
+            this.txbUrlImagen.TabIndex = 6;
+            this.txbUrlImagen.Leave += new System.EventHandler(this.txbUrlImagen_Leave);
             // 
             // lblUrl
             // 
@@ -224,7 +213,7 @@
             this.txbIngresarPrecio.Location = new System.Drawing.Point(116, 175);
             this.txbIngresarPrecio.Name = "txbIngresarPrecio";
             this.txbIngresarPrecio.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarPrecio.TabIndex = 11;
+            this.txbIngresarPrecio.TabIndex = 5;
             this.txbIngresarPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbIngresarPrecio_KeyPress);
             // 
             // txbIngresarDescripcion
@@ -232,14 +221,14 @@
             this.txbIngresarDescripcion.Location = new System.Drawing.Point(116, 78);
             this.txbIngresarDescripcion.Name = "txbIngresarDescripcion";
             this.txbIngresarDescripcion.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarDescripcion.TabIndex = 8;
+            this.txbIngresarDescripcion.TabIndex = 2;
             // 
             // txbIngresarNombre
             // 
             this.txbIngresarNombre.Location = new System.Drawing.Point(116, 44);
             this.txbIngresarNombre.Name = "txbIngresarNombre";
             this.txbIngresarNombre.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarNombre.TabIndex = 7;
+            this.txbIngresarNombre.TabIndex = 1;
             // 
             // lblCategoria
             // 
@@ -297,7 +286,7 @@
             this.txbIngresarCodigo.Location = new System.Drawing.Point(116, 15);
             this.txbIngresarCodigo.Name = "txbIngresarCodigo";
             this.txbIngresarCodigo.Size = new System.Drawing.Size(120, 22);
-            this.txbIngresarCodigo.TabIndex = 1;
+            this.txbIngresarCodigo.TabIndex = 0;
             // 
             // lblCodigo
             // 
@@ -314,7 +303,7 @@
             this.btnBuscarArticulo.Location = new System.Drawing.Point(903, 117);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
             this.btnBuscarArticulo.Size = new System.Drawing.Size(149, 41);
-            this.btnBuscarArticulo.TabIndex = 7;
+            this.btnBuscarArticulo.TabIndex = 1;
             this.btnBuscarArticulo.Text = "BUSCAR";
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
             this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
@@ -324,7 +313,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(903, 228);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(149, 43);
-            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -349,7 +338,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(25, 167);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 30);
-            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -360,7 +349,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(25, 133);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -370,7 +359,7 @@
             this.txbNombreBuscar.Location = new System.Drawing.Point(24, 93);
             this.txbNombreBuscar.Name = "txbNombreBuscar";
             this.txbNombreBuscar.Size = new System.Drawing.Size(100, 22);
-            this.txbNombreBuscar.TabIndex = 3;
+            this.txbNombreBuscar.TabIndex = 1;
             this.txbNombreBuscar.Click += new System.EventHandler(this.txbNombreBuscar_Click);
             this.txbNombreBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbNombreBuscar_KeyDown);
             // 
@@ -379,7 +368,7 @@
             this.txbCodigoBuscar.Location = new System.Drawing.Point(24, 41);
             this.txbCodigoBuscar.Name = "txbCodigoBuscar";
             this.txbCodigoBuscar.Size = new System.Drawing.Size(100, 22);
-            this.txbCodigoBuscar.TabIndex = 2;
+            this.txbCodigoBuscar.TabIndex = 0;
             this.txbCodigoBuscar.Click += new System.EventHandler(this.txbCodigoBuscar_Click);
             this.txbCodigoBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbCodigoBuscar_KeyDown);
             // 
@@ -415,7 +404,7 @@
             this.Controls.Add(this.pnlFondoBusqueda);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscarArticulo);
-            this.Controls.Add(this.pnlFondo);
+            this.Controls.Add(this.pnlCargaArticulo);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.btnMostrarTodo);
             this.Controls.Add(this.pbxProducto);
@@ -429,11 +418,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Base de Datos";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.VentanaDB_Load);
+            this.Load += new System.EventHandler(this.frmVentanaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).EndInit();
-            this.pnlFondo.ResumeLayout(false);
-            this.pnlFondo.PerformLayout();
+            this.pnlCargaArticulo.ResumeLayout(false);
+            this.pnlCargaArticulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).EndInit();
             this.pnlFondoBusqueda.ResumeLayout(false);
@@ -451,7 +440,7 @@
         private System.Windows.Forms.PictureBox pbxProducto;
         private System.Windows.Forms.Button btnMostrarTodo;
         private System.Windows.Forms.Button btnAgregarArticulo;
-        private System.Windows.Forms.Panel pnlFondo;
+        private System.Windows.Forms.Panel pnlCargaArticulo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txbIngresarCodigo;
         private System.Windows.Forms.Label lblCategoria;
@@ -465,7 +454,6 @@
         private System.Windows.Forms.PictureBox pbxUrlImagen;
         private System.Windows.Forms.TextBox txbUrlImagen;
         private System.Windows.Forms.Label lblUrl;
-        private System.Windows.Forms.Button btnUrlCheck;
         private System.Windows.Forms.Button btnBuscarArticulo;
         private System.Windows.Forms.Button btnConfirmarAgregar;
         private System.Windows.Forms.Button btnEliminar;

@@ -71,6 +71,7 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     if(aux.Codigo == busqueda.Codigo || aux.Nombre == busqueda.Nombre)
                     {
+                        aux.Id = (int)datos.Lector["Id"];
                         aux.Codigo = (string)datos.Lector["Codigo"];
                         aux.Nombre = (string)datos.Lector["Nombre"];
                         aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -82,7 +83,7 @@ namespace negocio
                         aux.Marca.Id = (int)datos.Lector["IdMarca"];
                         aux.Marca.Descripcion = (string)datos.Lector["DesMarca"];
                         articulos.Add((Articulo)aux);
-                        break;
+                        
                     }
 
                 }
@@ -103,6 +104,24 @@ namespace negocio
 
         }
 
+        public void Eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id");
+                datos.Comando.Parameters.AddWithValue("@Id", id);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
         public void cargarArticulo(Articulo articuloNuevo)
         {
             AccesoDatos datos = new AccesoDatos(); // Instancia de la clase AccesoDatos
