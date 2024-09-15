@@ -16,5 +16,6 @@ namespace TPWinForm_EquipoX12A
         {
             InitializeComponent();
         }
+
     }
 }

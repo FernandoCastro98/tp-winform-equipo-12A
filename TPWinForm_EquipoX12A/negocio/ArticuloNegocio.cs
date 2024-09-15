@@ -100,8 +100,6 @@ namespace negocio
                 datos.CerrarConexion();
             }
 
-
-
         }
 
         public void Eliminar(int id)
