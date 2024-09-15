@@ -63,11 +63,11 @@ namespace TPWinForm_EquipoX12A
 
         private void tsbtnMostrarDescripcion_Click(object sender, EventArgs e)
         {
-            frmVertanaDescripcion ventanaDesc = new frmVertanaDescripcion();
+            frmVertanaCategoria ventanaDesc = new frmVertanaCategoria();
 
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(frmVertanaDescripcion))
+                if (item.GetType() == typeof(frmVertanaCategoria))
                 {
                     MessageBox.Show("Ya existe una ventana abierta");
                     return;

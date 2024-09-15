@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_EquipoX12A
 {
-    partial class frmVertanaDescripcion
+    partial class frmVertanaCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -391,11 +391,11 @@
             this.lblNombreVenana.Location = new System.Drawing.Point(14, 22);
             this.lblNombreVenana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreVenana.Name = "lblNombreVenana";
-            this.lblNombreVenana.Size = new System.Drawing.Size(116, 16);
+            this.lblNombreVenana.Size = new System.Drawing.Size(94, 16);
             this.lblNombreVenana.TabIndex = 10;
-            this.lblNombreVenana.Text = "DESCRIPCIONES";
+            this.lblNombreVenana.Text = "CATEGORIAS";
             // 
-            // frmVertanaDescripcion
+            // frmVertanaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -410,8 +410,8 @@
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lblNombreVenana);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmVertanaDescripcion";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmVertanaCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana de Descripciones";
             this.pnlFondoBusqueda.ResumeLayout(false);

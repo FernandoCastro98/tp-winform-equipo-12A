@@ -45,7 +45,7 @@
             this.tsbtnMostrarDescripcion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1073, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -82,21 +82,23 @@
             this.tsbtnMostrarDescripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnMostrarDescripcion.Name = "tsbtnMostrarDescripcion";
             this.tsbtnMostrarDescripcion.Size = new System.Drawing.Size(100, 25);
-            this.tsbtnMostrarDescripcion.Text = "DESCRIPCIONES";
+            this.tsbtnMostrarDescripcion.Text = "CATEGORIAS";
             this.tsbtnMostrarDescripcion.Click += new System.EventHandler(this.tsbtnMostrarDescripcion_Click);
             // 
             // frmVentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1073, 609);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVentanaPrincipal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmVentanaPrincipal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Administrador de BBDD";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -146,6 +146,30 @@ namespace negocio
                 datos.CerrarConexion();
             }
         }
+        public void Editar(Articulo articuloNuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                datos.setearConsulta("UPDATE Articulos" +
+                    " set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, Precio = @Precio, " +
+                    " IdCategoria = @IdCategoria, IdMarca = @IdMarca WHERE ID = @Id");
+
+                datos.ConvertirDatos(articuloNuevo);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier error
+                throw ex;
+            }
+            finally
+            {
+                // Asegurar que la conexión se cierre correctamente
+                datos.CerrarConexion();
+            }
+        }
     }
 
 }

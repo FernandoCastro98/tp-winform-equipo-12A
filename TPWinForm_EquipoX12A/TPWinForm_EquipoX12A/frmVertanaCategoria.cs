@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TPWinForm_EquipoX12A
 {
-    public partial class frmVertanaDescripcion : Form
+    public partial class frmVertanaCategoria : Form
     {
-        public frmVertanaDescripcion()
+        public frmVertanaCategoria()
         {
             InitializeComponent();
         }

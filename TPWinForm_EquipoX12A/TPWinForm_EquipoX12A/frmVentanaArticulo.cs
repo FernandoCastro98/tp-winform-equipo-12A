@@ -13,10 +13,10 @@ using negocio;
 
 namespace TPWinForm_EquipoX12A
 {
-
     public partial class frmVentanaArticulo : Form
     {
         List<Articulo> articulos;
+        Herramientas herramienta;
         public frmVentanaArticulo()
         {
             InitializeComponent();
@@ -56,29 +56,32 @@ namespace TPWinForm_EquipoX12A
             ImagenNegocio imgNeg = new ImagenNegocio();
             List<Imagen> listaImagen = imgNeg.listar();
             bool checkImagen = false;
-
-            try
+            if(dgvArticulos.CurrentRow != null)
             {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                foreach (Imagen imagen in listaImagen)
+                try
                 {
-                    if (imagen.IdArticulo == seleccionado.Id)
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    foreach (Imagen imagen in listaImagen)
                     {
-                        pbxProducto.Load(imagen.UrlImagen);
-                        checkImagen = true;
-                        break;
+                        if (imagen.IdArticulo == seleccionado.Id)
+                        {
+                            pbxProducto.Load(imagen.UrlImagen);
+                            checkImagen = true;
+                            break;
+                        }
                     }
+                    if (!checkImagen)
+                    {
+                        pbxProducto.Load(@"imagen-no-disponible.png");
+                    }
+
                 }
-                if (!checkImagen)
+                catch (Exception ex)
                 {
                     pbxProducto.Load(@"imagen-no-disponible.png");
                 }
-
             }
-            catch (Exception ex)
-            {
-                pbxProducto.Load(@"imagen-no-disponible.png");
-            }
+            
         }
         
         private void btnBuscarArticulo_Click(object sender, EventArgs e)
@@ -161,12 +164,11 @@ namespace TPWinForm_EquipoX12A
         {
             txbCodigoBuscar.Enabled = false;
         }
-
         private void txbCodigoBuscar_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // Llamar al método del botón al presionar Enter
+                
                 btnBuscar_Click(sender, e);
             }
         }
@@ -175,7 +177,6 @@ namespace TPWinForm_EquipoX12A
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // Llamar al método del botón al presionar Enter
                 btnBuscar_Click(sender, e);
             }
         }
@@ -197,6 +198,7 @@ namespace TPWinForm_EquipoX12A
 
         private void btnConfirmarAgregar_Click(object sender, EventArgs e)
         {
+            herramienta = new Herramientas();
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             Articulo articulo = new Articulo();
             bool seCargo = false;
@@ -217,16 +219,17 @@ namespace TPWinForm_EquipoX12A
             catch (Exception ex)
             {
                 MessageBox.Show("Error en el formato de los datos ingresados...", "Error");
-                seCargo =false;
+                seCargo = false;
             }
             finally
             {
-                if(seCargo)
+                if(seCargo && herramienta.ValidarUrl(txbUrlImagen.Text) )
                 {
                     List<Articulo> listaAxiliar = articuloNegocio.buscarArticulo(articulo);
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
                     Imagen imagenNueva = new Imagen();
                     imagenNueva.IdArticulo = listaAxiliar[0].Id;
+
                     imagenNueva.UrlImagen = txbUrlImagen.Text;
 
                     if(imagenNegocio.cargar(imagenNueva))
@@ -239,7 +242,7 @@ namespace TPWinForm_EquipoX12A
                     }
 
                 }
-                else
+                else if(seCargo)
                 {
                     MessageBox.Show("El articulo fue cargado con exito, pero sin imagen...");
                 }
@@ -262,5 +265,40 @@ namespace TPWinForm_EquipoX12A
             }
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmVentanaEditarArticulo ventanaEditar;
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+
+            if (dgvArticulos.CurrentRow != null)
+            {
+                try
+                {
+
+                    Articulo articuloSeleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+
+                    DialogResult resultado = MessageBox.Show($"¿Estás seguro de que deseas editar el artículo '{articuloSeleccionado.Nombre}'?", "Confirmar edicion", MessageBoxButtons.YesNo);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        ventanaEditar = new frmVentanaEditarArticulo(articuloSeleccionado);
+                        ventanaEditar.ShowDialog();
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al editar el artículo: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un artículo para editar.");
+            }
+        }
+
+
     }
 }

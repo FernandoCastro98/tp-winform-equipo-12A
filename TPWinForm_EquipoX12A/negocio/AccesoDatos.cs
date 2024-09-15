@@ -57,11 +57,12 @@ namespace negocio
         //Convierte los datos de Artiuclo para poder ser leidos por la BBDD.
         public void ConvertirDatos(Articulo articulo)
         {
+            comando.Parameters.AddWithValue("@Id", articulo.Id);
             comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
             comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
             comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
             comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
-            comando.Parameters.AddWithValue("@idCategoria", articulo.Categoria.Id);
+            comando.Parameters.AddWithValue("@IdCategoria", articulo.Categoria.Id);
             comando.Parameters.AddWithValue("@Precio", articulo.Precio);
         }
 

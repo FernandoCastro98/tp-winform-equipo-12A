@@ -62,6 +62,7 @@
             this.lblNombreBusqueda = new System.Windows.Forms.Label();
             this.lblCodigoBusqueda = new System.Windows.Forms.Label();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProducto)).BeginInit();
             this.pnlCargaArticulo.SuspendLayout();
@@ -105,7 +106,7 @@
             // 
             this.btnMostrarTodo.Location = new System.Drawing.Point(903, 64);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
-            this.btnMostrarTodo.Size = new System.Drawing.Size(149, 40);
+            this.btnMostrarTodo.Size = new System.Drawing.Size(149, 35);
             this.btnMostrarTodo.TabIndex = 0;
             this.btnMostrarTodo.Text = "MOSTRAR";
             this.btnMostrarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -114,9 +115,9 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(903, 172);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(904, 149);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(149, 43);
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(149, 35);
             this.btnAgregarArticulo.TabIndex = 2;
             this.btnAgregarArticulo.Text = "AGREGAR";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
@@ -300,9 +301,9 @@
             // 
             // btnBuscarArticulo
             // 
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(903, 117);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(903, 105);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(149, 41);
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(149, 35);
             this.btnBuscarArticulo.TabIndex = 1;
             this.btnBuscarArticulo.Text = "BUSCAR";
             this.btnBuscarArticulo.UseVisualStyleBackColor = true;
@@ -310,9 +311,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(903, 228);
+            this.btnEliminar.Location = new System.Drawing.Point(904, 193);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(149, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(149, 35);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -396,11 +397,22 @@
             // 
             this.categoriaBindingSource.DataSource = typeof(dominio.Categoria);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(903, 236);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(149, 35);
+            this.btnEditar.TabIndex = 10;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmVentanaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1067, 569);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pnlFondoBusqueda);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscarArticulo);
@@ -416,7 +428,7 @@
             this.MinimizeBox = false;
             this.Name = "frmVentanaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Base de Datos";
+            this.Text = "Articulos";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmVentanaArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
@@ -468,5 +480,6 @@
         private System.Windows.Forms.BindingSource marcaBindingSource;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
